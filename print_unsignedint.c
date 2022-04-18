@@ -43,7 +43,7 @@ int int_count(unsigned int number)
  * @pa: va_list with number to print
  * Return: number of characters printed
  */
-int print_usignedint(char *format, va_list pa)
+int print_unsignedint(char *format, va_list pa)
 {
 	unsigned int number = va_arg(pa, unsigned int);
 	int numrow;
