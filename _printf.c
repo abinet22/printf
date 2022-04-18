@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * _printf - prints formatted data to stdout
- * @format: string that contains the format to print
- * Return: number of characters written
+ * _printf - print anything with formating
+ *@format: pointer
+ * Return: On success.
  */
 int _printf(char *format, ...)
 {
