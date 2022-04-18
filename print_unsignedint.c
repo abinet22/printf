@@ -38,7 +38,7 @@ int int_count(unsigned int number)
 }
 
 /**
- * printint - prints a number
+ * print_unsignedint - prints a number
  * @format: format to print number
  * @pa: va_list with number to print
  * Return: number of characters printed

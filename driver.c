@@ -2,11 +2,11 @@
 
 /**
  * driver - selector for type of fun.
+ * structype selector - Struct
  * @format: string.
  * Description: the function loops through the structs
  * selector[] ment of the struct.
  * Return: a pointer
- * structype selector - Struct
  */
 int (*driver(char *format))(char *format, va_list)
 {
@@ -17,7 +17,7 @@ int (*driver(char *format))(char *format, va_list)
 		{"%s", printstr},
 		{"%d", printint},
 		{"%i", printint},
-		{"%u", print_unsignedint},
+		{"%u", print_usignedint},
 		{"%%", printpercent},
 		{"%x", printhex},
 		{"%X", printHEX},
