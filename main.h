@@ -32,7 +32,6 @@ int print_binary(va_list arg);
 int len_buffer(unsigned int n, int base);
 int print_rev(va_list arg);
 int print_rot(va_list arg);
-int print_the_string(va_list arg);
-int print_the_HEX(char n);
+
 
 #endif /* MAIN_H */
