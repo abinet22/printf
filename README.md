@@ -35,26 +35,6 @@ File: man_3_printf
 Handle the following custom conversion specifiers:
 
 b: the unsigned int argument is converted to binary
-alex@ubuntu:~/c/printf$ cat main.c
-#include "main.h"
-
-/**
- * main - Entry point
- *
- * Return: Always 0
- */
-int main(void)
-{
-    _printf("%b\n", 98);
-    return (0);
-}
-alex@ubuntu:~/c/printf$ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 main.c
-alex@ubuntu:~/c/printf$ ./a.out
-1100010
-alex@ubuntu:~/c/printf$
-Repo:
-
-GitHub repository: printf
   
 4. What one has not experienced, one will never understand in print
 #advanced
@@ -86,26 +66,7 @@ Handle the following custom conversion specifier:
 
 S : prints the string.
 Non printable characters (0 < ASCII value < 32 or >= 127) are printed this way: \x, followed by the ASCII code value in hexadecimal (upper case - always 2 characters)
-alex@ubuntu:~/c/printf$ cat main.c
-#include "main.h"
 
-/**
- * main - Entry point
- *
- * Return: Always 0
- */
-int main(void)
-{
-    _printf("%S\n", "Best\nSchool");
-    return (0);
-}
-alex@ubuntu:~/c/printf$ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 main.c
-alex@ubuntu:~/c/printf$ ./a.out
-Best\x0ASchool
-alex@ubuntu:~/c/printf$
-Repo:
-
-GitHub repository: printf
   
 6. How is the world ruled and led to war? Diplomats lie to journalists and believe these lies when they see them in print
 #advanced
