@@ -1,44 +1,50 @@
 #include "main.h"
+
 /**
-* _printf- Function that works like printf
-* @format: string argument passed to variadic function
-*
-* Return: Number of characters passed to the console
-*/
-int _printf(const char *format, ...)
+ * _printf - prints formatted data to stdout
+ * @format: string that contains the format to print
+ * Return: number of characters written
+ */
+int _printf(char *format, ...)
 {
-	if (format != NULL)
+	int written = 0, (*structype)(char *, va_list);
+	char q[3];
+	va_list pa;
+
+	if (format == NULL)
+		return (-1);
+	q[2] = '\0';
+	va_start(pa, format);
+	_putchar(-1);
+	while (format[0])
 	{
-		int len = 0;
-
-		specifier sp[] = {
-			{"c", print_char},
-			{"s", print_string},
-			{"%", print_percent},
-			{"d", print_integer},
-			{"i", print_integer},
-			{"x", print_hex},
-			{"X", print_HEX},
-			{"o", print_octal},
-			{"b", print_binary},
-			{"u", print_unsigned},
-			{"r", print_rev},
-			{"R", print_rot},
-		    {"S", print_the_string},
-			{NULL, NULL},
-		};
-
-		va_list arg;
-
-		va_start(arg, format);
+		if (format[0] == '%')
 		{
-			len += entry_printf(sp, format, arg);
+			structype = driver(format);
+			if (structype)
+			{
+				q[0] = '%';
+				q[1] = format[1];
+				written += structype(q, pa);
+			}
+			else if (format[1] != '\0')
+			{
+				written += _putchar('%');
+				written += _putchar(format[1]);
+			}
+			else
+			{
+				written += _putchar('%');
+				break;
+			}
+			format += 2;
 		}
-
-		va_end(arg);
-
-		return (len);
+		else
+		{
+			written += _putchar(format[0]);
+			format++;
+		}
 	}
-
-	return (-1);
+	_putchar(-2);
+	return (written);
 }
