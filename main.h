@@ -1,40 +1,40 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <stdlib.h>
 #include <stdarg.h>
-#include <unistd.h>
-/**
- * struct type - connect conversion specifiers with the correct print function
- * @print: a function pointer for the print functions
- * @identifier: the conversion specifier
- */
-typedef struct type
-{
-	char *identifier;
-	int (*print)(va_list);
-} type_t;
+#include <stddef.h>
+#include <stdlib.h>
 
-int _putchar(char c);
-int (*get_function(const char *specifier))(va_list);
-int _printf(const char *, ...);
-int _strlen(char *);
-int print_rev(va_list args);
-int rot13(va_list args);
-int print_number(unsigned int n);
-int countDigits(unsigned int num);
-int countOctal(unsigned int num);
-int countBinary(unsigned int num);
-int print_b(va_list args);
-int print_o(va_list args);
-int print_d(va_list args);
-int print_x(va_list args);
-void print_lowerHex(unsigned int num, int *count);
-int print_X(va_list args);
-void print_upperHex(unsigned int num, int *count);
-int print_p(va_list args);
-int print_s(va_list args);
-int print_c(va_list args);
-int print_u(va_list args);
+/**
+ * struct structprint - structure containing
+ * @q: the location and method to translate data to characters.
+ * @u: print function for specific type.
+ *
+ * Return: int
+ */
+typedef struct structprint
+{
+	char *q;
+	int (*u)(char *format, va_list);
+} structype;
+
+int _putchar(char ch);
+int _puts(char *string);
+int printc(char *format, va_list);
+int printstr(char *format, va_list);
+int (*driver(char *format))(char *format, va_list);
+int _printf(char *format, ...);
+int printint(char *format, va_list pa);
+int integer(int number);
+int contadordigit(int number);
+int _abs(int number);
+int printpercent(char *format, va_list pa);
+int printhex(char *format, va_list);
+int printHEX(char *format, va_list);
+int printocta(char *format, va_list);
+int print_unsign(char *format, va_list);
+int print_usignedint(char *format, va_list pa);
+int int_count(unsigned int number);
+int digit_count(unsigned int number);
 
 #endif /* MAIN_H */
