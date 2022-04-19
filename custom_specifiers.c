@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-* rint_the_string - prints the string
+* print_the_string - prints the string
 * @arg: argument
 *
 * Return: length of printed characters
@@ -35,8 +35,7 @@ int print_the_string(va_list arg)
 
 /**
 * print_the_HEX - convert decimal to HEXADECIMAL and prints it
-* @arg: to store the number of arguments
-*
+* @n: the number from user
 * Return: number of characters to be sent to console
 */
 int print_the_HEX(char n)
