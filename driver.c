@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
  * driver - selector for type of fun.
@@ -16,7 +16,12 @@ int i;
 structype selector[] = {
 {"%c", printc},
 {"%s", printstr},
+{"%d", printint},
+{"%i", printint},
 {"%%", printpercent},
+{"%x", printhex},
+{"%X", printHEX},
+{"%o", printocta},
 {NULL, NULL}
 };
 
